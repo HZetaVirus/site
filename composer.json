@@ -1,0 +1,15 @@
+{
+    "name": "avraham/site",
+    "description": "Refaturando para o minímo adquado",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David Teixeira Pereira Ferreira"
+        }
+    ],
+    "require": {}
+}

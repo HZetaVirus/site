@@ -26,10 +26,10 @@ class Routes extends Bootstrap
             'action'     => 'simulador'
         ];
         
-        $routes['autenticar'] = [
-            'route'      => '/autenticar',
-            'controller' => 'autenticarController',
-            'action'     => 'autenticar'
+        $routes['login'] = [
+            'route'      => '/login',
+            'controller' => 'indexController',
+            'action'     => 'login'
         ];
 
         $this->setRoutes($routes);

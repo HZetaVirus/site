@@ -6,5 +6,7 @@ use app\class\Action;
 
 class AutenticarController extends Action
 {
-    public function autenticar(){}
+    // public function autenticar(){
+    //     $this->render('login');
+    // }
 }

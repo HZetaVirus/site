@@ -11,8 +11,14 @@ class IndexController extends Action
     }
 
     public function cadastro(){
-        //$this->render('cadastro');
+        $this->render('cadastro');
     }
 
-    public function simulador(){}
+    public function simulador(){
+        $this->render('simulador');
+    }
+
+    public function login(){
+        $this->render('login');
+    }
 }

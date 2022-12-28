@@ -1,44 +1,63 @@
-<form class="row g-3">
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4">
-  </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword4">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress" class="form-label">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress2" class="form-label">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">City</label>
-    <input type="text" class="form-control" id="inputCity">
-  </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-    </select>
-  </div>
-  <div class="col-md-2">
-    <label for="inputZip" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </div>
-</form>
+    <form class="row g-3 mt-1">      
+
+      <div class="col-md-6">
+        <label for="nome" class="form-label text-white">Informe o seu nome</label>
+        <input type="email" class="form-control py-3" id="inputEmail4">
+      </div>
+      <div class="col-md-6">
+        <label for="numWhatsApp" class="form-label text-white">Número do whats app com DDD</label>
+        <input type="text" class="form-control py-3" id="numWhatsApp">
+      </div>
+
+      <div class="col-md-12">
+        <label for="inputState" class="form-label">Estado</label>
+        <select id="inputState" class="form-select py-3">
+          <option selected>Estado</option>
+          <option>Rio de janeiro</option>
+        </select>
+      </div>
+
+      <div class="col-md-12">
+        <label for="inputState" class="form-label">cidade</label>
+        <select id="inputState" class="form-select py-3">
+          <option selected>Cidades</option>
+          <option value="cidade">RIO DE JANEIRO</option>
+          <option value="cidade">SÃO GONÇALO</option>
+          <option value="cidade">NITERÓI</option>
+          <option value="cidade">BELFORD ROXO</option>
+          <option value="cidade">NOVA IGUAÇÚ</option>
+          <option value="cidade">DUQUE DE CAXIAS</option>
+          <option value="cidade">CAMPOS DOS GOYTACAZES</option>
+          <option value="cidade">SÃO JOÃO DE MERITI</option>
+          <option value="cidade">PETRÓPOLIS</option>
+          <option value="cidade">VOLTA REDONDA</option>
+          <option value="cidade">MACAÉ</option>
+          <option value="cidade">MAGÉ</option>
+          <option value="cidade">ITABORAÍ</option>
+          <option value="cidade">CABO FRIO</option>
+          <option value="cidade">ANGRA DOS REIS</option>
+          <option value="cidade">NOVA FRIBURGO</option>
+          <option value="cidade">BARRA MANSA</option>
+          <option value="cidade">TERESÓPOLIS</option>
+          <option value="cidade">MESQUITA</option>
+          <option value="cidade">NILÓPOLIS</option>
+          <option value="cidade">MARICÁ</option>
+          <option value="cidade">RIO DAS OSTRAS</option>
+          <option value="cidade">QUEIMADOS</option>
+          <option value="cidade">ITAGUAÍ</option>
+          <option value="cidade">ARARUAMA</option>
+          <option value="cidade">RESENDE</option>
+          <option value="cidade">JAPERI</option>
+          <option value="cidade">SÃO PEDRO DA ALDEIA</option>
+          <option value="cidade">ITAPERUNA</option>
+          <option value="cidade">BARRA DO PIRAÍ</option>
+        </select>
+      </div>
+
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-warning py-3 text-light text-uppercase fs-4 w-bold">Acessar</button>
+      </div>
+
+    </form>
+
+  

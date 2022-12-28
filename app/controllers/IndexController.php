@@ -7,10 +7,12 @@ use app\class\Action;
 class IndexController extends Action
 {
     public function index(){
-        $this->render('inicio');
+        $this->render('index');
     }
 
-    public function cadastro(){}
+    public function cadastro(){
+        $this->render('cadastro');
+    }
 
     public function simulador(){}
 }

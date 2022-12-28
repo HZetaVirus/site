@@ -2,6 +2,9 @@
 
 namespace app\class;
 
+use app\core\Run;
+use app\core\Uri;
+
 abstract class Bootstrap
 {
 
@@ -9,7 +12,8 @@ abstract class Bootstrap
 
     public function __construct()
     {
-        
+        $this->initRouts();
+        Run::run($this->getRoutes(), Uri::getUri());
     }
 
     abstract public function initRouts();

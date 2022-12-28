@@ -13,7 +13,7 @@ abstract class Action
         $this->view = new stdClass();
     }
     
-    public function render($view, $layout){
+    public function render($view, $layout='layout'){
         $this->view->page = $view;
         $files = "../app/views/".$layout.".php";
 

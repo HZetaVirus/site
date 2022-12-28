@@ -1,0 +1,192 @@
+<html><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-control" content="no-cache">
+  <meta charset="utf-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <title>Simulador</title>
+  <script>
+    $(function(){
+       $("#liga").click(function (){
+        alert('Teste');
+        $("#tempo").html(title);
+        });
+    });  
+  
+    var blur = 0;
+    var starttime = new Date();
+    var startclock = starttime.getTime();
+    var mytimeleft = 0;
+
+    function doTime() {
+      window.setTimeout( "doTime()", 1000 );
+      t = new Date();
+      time = Math.round((t.getTime() - starttime.getTime())/1000);
+      if (mytimeleft) {
+        time = mytimeleft - time;
+        if (time <= 0) {
+          window.location = "/login/index.php?res=popup3&uamip=192.168.14.1&uamport=3990";
+        }
+      }
+      if (time < 0) time = 0;
+      hours = (time - (time % 3600)) / 3600;
+      time = time - (hours * 3600);
+      mins = (time - (time % 60)) / 60;
+      secs = time - (mins * 60);
+      if (hours < 10) hours = "0" + hours;
+      if (mins < 10) mins = "0" + mins;
+      if (secs < 10) secs = "0" + secs;
+      title = "Tempo Online: " + hours + ":" + mins + ":" + secs;
+      if (mytimeleft) {
+        title = "Tempo Restante: " + hours + ":" + mins + ":" + secs;
+        var
+      }
+      if(document.all || document.getElementById){
+         document.title = title;
+      }
+      else {   
+        self.status = title;
+      }
+    }
+    
+    function popUp(URL) {
+      if (self.name != "chillispot_popup") {
+        chillispot_popup = window.open(URL, 'chillispot_popup', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=375');
+      }
+    }
+
+    function doOnLoad(result, URL, userurl, redirurl, timeleft) {
+      if (timeleft) {
+        mytimeleft = timeleft;
+      }
+      if ((result == 1) && (self.name == "chillispot_popup")) {
+        doTime();
+      }
+      if ((result == 1) && (self.name != "chillispot_popup")) {
+        chillispot_popup = window.open(URL, 'chillispot_popup', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=375');
+      }
+      if ((result == 2) || result == 5) {
+        document.form1.UserName.focus()
+      }
+      if ((result == 2) && (self.name != "chillispot_popup")) {
+        chillispot_popup = window.open('', 'chillispot_popup', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=400,height=200');
+        chillispot_popup.close();
+      }
+      if ((result == 12) && (self.name == "chillispot_popup")) {
+        doTime();
+        if (redirurl) {
+          opener.location = redirurl;
+        }
+        else if (opener.home) {
+          opener.home();
+        }
+        else {
+          opener.location = "about:home";
+        }
+        self.focus();
+        blur = 0;
+      }
+      if ((result == 13) && (self.name == "chillispot_popup")) {
+        self.focus();
+        blur = 1;
+      }
+    }
+
+    function doOnBlur(result) {
+      if ((result == 12) && (self.name == "chillispot_popup")) {
+        if (blur == 0) {
+          blur = 1;
+          self.focus();
+    	}
+   } 
+  </script>
+  <link rel="stylesheet" href="./index.php_files/bootstrap.min.css">
+  <link rel="stylesheet" href="./index.php_files/abgs-style.css">
+  <link rel="stylesheet" href="./index.php_files/animate.css">
+  <link rel="stylesheet" href="./index.php_files/font-awesome.css">
+      <style>
+      body{
+          background-color: #000000;
+      }
+
+  </style>
+</head>
+
+<body onload="javascript:doOnLoad(5,&#39;/login/index.php?res=popup2&amp;uamip=192.168.14.1&amp;uamport=3990&amp;userurl=http://uniaomaker.com/&amp;redirurl=&amp;timeleft=&#39;,&#39;http://uniaomaker.com/&#39;, &#39;&#39;, &#39;&#39;)" onblur="javascript:doOnBlur(5)">
+
+  <h1 style="text-align: center;"></h1><script>
+    $(function(){        
+        $("#trial").click(function(){ 
+            var valor = $("#vtraial").val();
+            if(valor == ""){
+                alert("Adquirá seu Cartão Pré na Pizzaria do Moizes;");        
+                }            
+                var complet = $("#UserName").val(valor);
+        });   
+    });
+</script>
+<div class="logo">
+<img class="img-rounded img-responsive animate0 bounceIn" title="LOGO" src="./logo.png">
+
+</div>
+
+<div class="text-center relogio"></div>
+  
+<form class="form-signin" name="form1">
+
+<h4 class="text-justify" style="color: #FFF">Olá, José da Silva</h4></center>
+
+<center>
+<div class="alert alert-success" role="alert" style="position:relative; width:390px;">
+  <h4 class="text-justify" "alert-heading">Minha Rede: <strong>0</strong> Indicados</h4>
+  <hr>
+  <h5 class="text-justify" "alert-heading">Meus Ganhos Mensais</h5>
+  <h1 class="text-justify"><strong>R$ 0,00</strong></h1>
+</div></center>
+<h4 class="text-justify" style="color: #FFF">Simulador de Ganhos</h4>
+<img src="branca.jpg" style="position:relative; width:370px; height:1px;"></center>
+<br><br>
+
+<div class="form-group">
+    <p class="text-justify" style="color: #fff">
+Qual será sua meta de Indicados por dia para sua rede?</p>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+  </div>
+  <div class="form-group">
+    <p class="text-justify" style="color: #fff">
+Quantos dias no mês você pretende trabalhar fazendo indicações? </p>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+  </div>
+  
+  <p class="text-justify" style="color: #fff">
+De acordo com pesquisas feitas, em media um passageiro realiza 2 viagens por dia. </p>
+  <select class="form-control">
+  <option>1 viagem por dia</option>
+   <option>2 viagem por dia</option>
+</select>
+<br>
+<p class="text-warning">ATENÇÃO!<br>Os valores apresentados aqui são apenas uma simulação de passiveis ganhos.</p>
+<center><a class="btn btn-lg btn-warning btn-block animate5 bounceIn" style="width:380px; border-style: solid; border-width: 0px; border-color:#fff;">Simular Agora</a></center>&nbsp;&nbsp;
+
+<br>
+<div class="logo">
+<a href="https://play.google.com/store/apps/details?id=com.moobservice.user" target="_blank"><img class="img-rounded img-responsive animate0 bounceIn" title="LOGO" src="./play.png"></a>
+
+</div>
+<br>
+<p style="color: #FFF">LINKS ÚTEIS:</p>
+<button type="button" class="btn btn-primary" "text-justify" data-toggle="button" aria-pressed="false" autocomplete="off" style="width:380px; border-style: solid; border-width: 0px; border-color:#fff;">
+Regulamento do programa de Indicação
+</button>
+<br><br>
+<button type="button" class="btn btn-primary" "text-justify" data-toggle="button" aria-pressed="false" autocomplete="off" style="width:380px; border-style: solid; border-width: 0px; border-color:#fff;">
+Perguntas Frequentes
+</button>
+
+</form>
+</div>
+<footer><center>
+
+</center>
+</div>
+</footer>
+</body></html>

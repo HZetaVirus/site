@@ -1,33 +1,223 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <title>Bootstrap 5 Example</title>
-  <meta charset="utf-8">
+<html><head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <meta http-equiv="Cache-control" content="no-cache">
+  <meta charset="utf-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <title>Cadastro</title>
+  <script>
+    $(function(){
+       $("#liga").click(function (){
+        alert('Teste');
+        $("#tempo").html(title);
+        });
+    });  
+  
+    var blur = 0;
+    var starttime = new Date();
+    var startclock = starttime.getTime();
+    var mytimeleft = 0;
+
+    function doTime() {
+      window.setTimeout( "doTime()", 1000 );
+      t = new Date();
+      time = Math.round((t.getTime() - starttime.getTime())/1000);
+      if (mytimeleft) {
+        time = mytimeleft - time;
+        if (time <= 0) {
+          window.location = "/login/index.php?res=popup3&uamip=192.168.14.1&uamport=3990";
+        }
+      }
+      if (time < 0) time = 0;
+      hours = (time - (time % 3600)) / 3600;
+      time = time - (hours * 3600);
+      mins = (time - (time % 60)) / 60;
+      secs = time - (mins * 60);
+      if (hours < 10) hours = "0" + hours;
+      if (mins < 10) mins = "0" + mins;
+      if (secs < 10) secs = "0" + secs;
+      title = "Tempo Online: " + hours + ":" + mins + ":" + secs;
+      if (mytimeleft) {
+        title = "Tempo Restante: " + hours + ":" + mins + ":" + secs;
+        var
+      }
+      if(document.all || document.getElementById){
+         document.title = title;
+      }
+      else {   
+        self.status = title;
+      }
+    }
+    
+    function popUp(URL) {
+      if (self.name != "chillispot_popup") {
+        chillispot_popup = window.open(URL, 'chillispot_popup', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=375');
+      }
+    }
+
+    function doOnLoad(result, URL, userurl, redirurl, timeleft) {
+      if (timeleft) {
+        mytimeleft = timeleft;
+      }
+      if ((result == 1) && (self.name == "chillispot_popup")) {
+        doTime();
+      }
+      if ((result == 1) && (self.name != "chillispot_popup")) {
+        chillispot_popup = window.open(URL, 'chillispot_popup', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=375');
+      }
+      if ((result == 2) || result == 5) {
+        document.form1.UserName.focus()
+      }
+      if ((result == 2) && (self.name != "chillispot_popup")) {
+        chillispot_popup = window.open('', 'chillispot_popup', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=400,height=200');
+        chillispot_popup.close();
+      }
+      if ((result == 12) && (self.name == "chillispot_popup")) {
+        doTime();
+        if (redirurl) {
+          opener.location = redirurl;
+        }
+        else if (opener.home) {
+          opener.home();
+        }
+        else {
+          opener.location = "about:home";
+        }
+        self.focus();
+        blur = 0;
+      }
+      if ((result == 13) && (self.name == "chillispot_popup")) {
+        self.focus();
+        blur = 1;
+      }
+    }
+
+    function doOnBlur(result) {
+      if ((result == 12) && (self.name == "chillispot_popup")) {
+        if (blur == 0) {
+          blur = 1;
+          self.focus();
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./index.php_files/bootstrap.min.css">
+  <link rel="stylesheet" href="./index.php_files/abgs-style.css">
+  <link rel="stylesheet" href="./index.php_files/animate.css">
+  <link rel="stylesheet" href="./index.php_files/font-awesome.css">
+      <style>
+      body{
+          background-color: #000000;
+      }
+
+  </style>
 </head>
-<body>
- <div class="container-fluid p-5 bg-primary text-white text-center">
-  <h1>Pais e filhos lanches</h1>
-  <p>Resize this responsive page to see the effect!</p>
+
+<body onLoad="javascript:doOnLoad(5,&#39;/login/index.php?res=popup2&amp;uamip=192.168.14.1&amp;uamport=3990&amp;userurl=http://uniaomaker.com/&amp;redirurl=&amp;timeleft=&#39;,&#39;http://uniaomaker.com/&#39;, &#39;&#39;, &#39;&#39;)" onBlur="javascript:doOnBlur(5)">
+
+  <h1 style="text-align: center;"></h1><script>
+    $(function(){        
+        $("#trial").click(function(){ 
+            var valor = $("#vtraial").val();
+            if(valor == ""){
+                alert("Adquirá seu Cartão Pré na Pizzaria do Moizes;");        
+                }            
+                var complet = $("#UserName").val(valor);
+        });   
+    });
+</script>
+<div class="logo">
+<img class="img-rounded img-responsive animate0 bounceIn" title="LOGO" src="./logo.png">
+
 </div>
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
+
+<div class="text-center relogio"></div>
+<center><img src="baner01.png"></center>
+  
+<form class="form-signin" name="form1">
+<form method="post" action="connect.php"> 
+
+<h4 class="text-justify" style="color: #FFF">Simulador de Ganhos</h4>
+<img src="branca.jpg" style="position:relative; width:370px; height:1px;"></center>
+<br><br>
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#paraindex" role="tab" aria-controls="pills-home" aria-selected="true">Cadastrar</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="login.html" role="tab" aria-controls="login.html" aria-selected="false">Já sou Cadastrado</a>
+  </li>
+  </ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+</div>
+
+<div class="form-group">
+    <p class="text-justify" style="color: #fff">
+Informe o seu nome</p>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
   </div>
-</div> 
+  <div class="form-group">
+    <p class="text-justify" style="color: #fff">
+Numero do WhatsApp com DDD</p>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+  </div>
+  
+  <p class="text-justify" style="color: #fff">
+Estado</p>
+  <select class="form-control">
+  <option></option>
+   <option>Rio de Janeiro</option>
+   
+</select>
+<br>
+<p class="text-justify" style="color: #fff">
+Cidade</p>
+  <select class="form-control">
+   <option></option>
+  <option value="cidade"></option>
+             <option value="cidade">RIO DE JANEIRO</option>
+             <option value="cidade">SÃO GONÇALO</option>
+             <option value="cidade">NITERÓI</option>
+             <option value="cidade">BELFORD ROXO</option>
+             <option value="cidade">NOVA IGUAÇÚ</option>
+             <option value="cidade">DUQUE DE CAXIAS</option>
+             <option value="cidade">CAMPOS DOS GOYTACAZES</option>
+             <option value="cidade">SÃO JOÃO DE MERITI</option>
+             <option value="cidade">PETRÓPOLIS</option>
+             <option value="cidade">VOLTA REDONDA</option>
+             <option value="cidade">MACAÉ</option>
+             <option value="cidade">MAGÉ</option>
+             <option value="cidade">ITABORAÍ</option>
+             <option value="cidade">CABO FRIO</option>
+             <option value="cidade">ANGRA DOS REIS</option>
+             <option value="cidade">NOVA FRIBURGO</option>
+             <option value="cidade">BARRA MANSA</option>
+             <option value="cidade">TERESÓPOLIS</option>
+             <option value="cidade">MESQUITA</option>
+             <option value="cidade">NILÓPOLIS</option>
+             <option value="cidade">MARICÁ</option>
+             <option value="cidade">RIO DAS OSTRAS</option>
+             <option value="cidade">QUEIMADOS</option>
+             <option value="cidade">ITAGUAÍ</option>
+             <option value="cidade">ARARUAMA</option>
+             <option value="cidade">RESENDE</option>
+             <option value="cidade">JAPERI</option>
+             <option value="cidade">SÃO PEDRO DA ALDEIA</option>
+             <option value="cidade">ITAPERUNA</option>
+             <option value="cidade">BARRA DO PIRAÍ</option>
+   </select>
+<p class="text-warning"></p>
+<br>
+<center>
+<div class="col-12">
+	<center><button type="submit" class="btn btn-lg btn-warning btn-block animater5 bounceIn" style="width:370px; border-style: solid; border-width: 0px; border-color:#fff;">Cadastrar</button></center>
+</div>
+</form>
+<footer><center>
+
+</center>
+</div>
+</footer>
+</body></html>

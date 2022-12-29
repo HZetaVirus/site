@@ -2,7 +2,9 @@
 
 namespace app\models;
 
-class Usuarios extends Model
+use app\database\Connection;
+
+class Usuarios 
 {
     private string $id;
     private string $nome;
@@ -18,19 +20,16 @@ class Usuarios extends Model
         $this->$attribute = $value;
     }
 
-    public function create(){
-        $sql  = "insert into usuario(nome, cel, cidade, estado)
-                                             values
-                               (:nome, :cel, :cidade, :estado)";
+    public function cadastrar(array $dados):void{
         
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindValue(':nome',   $this->__get('nome'));
-        $stmt->bindValue(':cel',    $this->__get('cel'));
-        $stmt->bindValue(':cidade', $this->__get('cidade'));
-        $stmt->bindValue(':estado', $this->__get('estado'));
-        $stmt->execute();
+        $query = "insert into usuario (nome, cel) values (:nome, :cel)";
+        $stmt = Connection::getInstancia()->prepare($query);
+        $stmt->execute([
+           ':nome' => $dados['nome'],
+           ':cel'  => $dados['cel']
+           ]
+        );
         
-        return $this;
     }
 
     public function read(){}

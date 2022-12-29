@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\class\Action;
+use app\models\Container\Container;
 
 class IndexController extends Action
 {
@@ -11,6 +12,13 @@ class IndexController extends Action
     }
 
     public function cadastro(){
+        $user = Container::getModel('Usuarios');
+        $user->__set('nome', $_POST['nome']);
+        echo $user->__get('nome');
+        echo '<br>';
+        //print_r($_POST);
+
+
         $this->render('cadastro');
     }
 

@@ -6,10 +6,10 @@ use app\database\Connection;
 
 class Container
 {
-    static public function getModel($model){
-        $class = "app\\models\\".ucfirst($model);
-        $connect = Connection::conenct();
+    public static function getModel($model) {
+		$class = "\\app\\models\\".ucfirst($model);
+		$conn = Connection::conenct();
 
-        return new $class($connect);
-    }
+		return new $class($conn);
+	}
 }

@@ -9,7 +9,7 @@ class Connection
     static public function conenct(){
         try {
             $pdo = new PDO(
-                "mysql:host=localhost;dbname={};charset=utf8", "root", ""
+                "mysql:host=localhost;dbname=siten;charset=utf8", "root", "dalwid"
             );
     
             return $pdo;

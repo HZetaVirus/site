@@ -1,17 +1,17 @@
-    <form class="row g-3 mt-1">      
+    <form action="/cadastro" method="POST" class="row g-3 mt-1">      
 
       <div class="col-md-6">
         <label for="nome" class="form-label text-white">Informe o seu nome</label>
-        <input type="email" class="form-control py-3" id="inputEmail4">
+        <input name="nome" type="text" class="form-control py-3" id="inputEmail4">
       </div>
       <div class="col-md-6">
         <label for="numWhatsApp" class="form-label text-white">Número do whats app com DDD</label>
-        <input type="text" class="form-control py-3" id="numWhatsApp">
+        <input name="cel" type="text" class="form-control py-3" id="numWhatsApp">
       </div>
 
       <div class="col-md-12">
         <label for="inputState" class="form-label">Estado</label>
-        <select id="inputState" class="form-select py-3">
+        <select name="estado" id="inputState" class="form-select py-3">
           <option selected>Estado</option>
           <option>Rio de janeiro</option>
         </select>
@@ -19,7 +19,7 @@
 
       <div class="col-md-12">
         <label for="inputState" class="form-label">cidade</label>
-        <select id="inputState" class="form-select py-3">
+        <select name="cidade" id="inputState" class="form-select py-3">
           <option selected>Cidades</option>
           <option value="cidade">RIO DE JANEIRO</option>
           <option value="cidade">SÃO GONÇALO</option>
@@ -55,7 +55,7 @@
       </div>
 
       <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-warning py-3 text-light text-uppercase fs-4 w-bold">Acessar</button>
+        <button type="submit" class="btn btn-warning py-3 text-light text-uppercase fs-4 w-bold">Cadastrar</button>
       </div>
 
     </form>

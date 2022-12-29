@@ -4,12 +4,11 @@ namespace app\models;
 
 use PDO;
 
-abstract class Model
-{
-    protected $conn;
+abstract class Model {
 
-    public function __construct(PDO $conn)
-    {
-        $this->conn = $conn;
-    }
+	protected $db;
+
+	public function __construct(PDO $db) {
+		$this->db = $db;
+	}
 }

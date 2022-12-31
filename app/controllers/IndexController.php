@@ -13,35 +13,45 @@ class IndexController extends Action
 
     public function cadastro(){
 
-        $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);      
+       
+        if($dados == ""){           
+            $this->render('cadastro');
+        }
         if(isset($dados)){
            (new Usuarios())->cadastrar($dados);
            
            $this->render('index');
         }     
        
-       /*
-       ====================================================================
-       O código abaixo é a forma antiga de se fazer, depois do PHP 8.0.1
-         não funciona mais o de cima éo correto lembra um pouco java
-       ==================================================================== 
-            $con = Connection::getInstancia();
-            $user->__set('nome',   strip_tags($_POST['nome']));
-            $user->__set('cel',    strip_tags($_POST['cel']));
-            $user->__set('cidade', strip_tags($_POST['cidade']));
-            $user->__set('estado', strip_tags($_POST['estado']));
-            $user->salvar();
-       ====================================================================     
-        */
-
         $this->render('cadastro');
     }
 
     public function simulador(){
+        
+        session_start();
+        
+        $login = $_POST['acessar'];     
+        
+        $result = (new Usuarios())->read();        
+        
+        $_SESSION['login'] = $result->cel;
+        $_SESSION['nome']  = $result->nome;
+        if($login == $_SESSION['login']){
+            echo "<script language='javascript'>window.alert('Login realizado com sucesso')</script>";
+            $this->render('simulador');
+        }
+        else{
+            echo "<script language='javascript'>window.alert('Erro de login')</script>";
+            $this->render('login');
+        }
+
         $this->render('simulador');
+        
     }
 
-    public function login(){
+    public function login(){       
+        
         $this->render('login');
     }
 }

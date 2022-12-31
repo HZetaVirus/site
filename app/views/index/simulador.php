@@ -1,6 +1,7 @@
-<<div class="alert alert-primary" role="alert">
-  Nome do usuario  
+<div class="alert alert-primary fs-4 mt-2" role="alert">
+    <?=  $_SESSION['nome'] ?>
 </div>
+
 <div class="alert alert-secondary fs-5" role="alert">
   Simulador de ganhos
 </div>

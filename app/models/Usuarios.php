@@ -32,6 +32,12 @@ class Usuarios
         
     }
 
-    public function read(){}
+    public function read(){        
+        $query = "select nome, cel from usuario";
+        $stmt  =  Connection::getInstancia()->prepare($query); 
+        $stmt->execute();       
+        $busca = $stmt->fetch();
+        return $busca;
+    }
 
 }

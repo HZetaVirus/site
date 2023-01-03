@@ -32,6 +32,18 @@ class Routes extends Bootstrap
             'action'     => 'login'
         ];
 
+        $routes['logoff'] = [
+            'route'      => '/logoff',
+            'controller' => 'indexController',
+            'action'     => 'logoff'
+        ];
+
+        $routes['calcular'] = [
+            'route'      => '/calcular',
+            'controller' => 'indexController',
+            'action'     => 'calcular'
+        ];
+
         $this->setRoutes($routes);
 
     }
